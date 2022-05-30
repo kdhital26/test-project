@@ -1,0 +1,60 @@
+
+<div *ngIf="!routeData.isViewPageShown" class="container mt-4">
+  <app-search [searchText]="searchText" (searchEmit)="searchEmit($event)"></app-search>
+    <div class="card row mt-3">
+        <div class="tool-bar d-flex justify-content-between mt-3">
+            <h3> Facilitators List</h3>
+            <button (click)="addFacilitators()" class="btn btn-outline-primary"><span  class="fa fa-plus">&nbsp;</span>Add Facilitators</button>
+        </div>
+        <div class="card-body">
+            <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">SN</th>
+                    <th scope="col">Facilitators Name</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Phone No</th>
+                    <th scope="col">Contact Person</th>
+                    <th scope="col">Clients</th>
+                    <th scope="col">Sites</th>
+                    <th scope="col">Tenants</th>
+                    <th scope="col">Area Sq Ft</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of facilitatorsViewModelList | searchPipe: searchText; let i = index">
+                    <td scope="row" >{{i + 1}}</td>
+                    <td>{{data.facilitatorsName}}</td>
+                    <td>{{data.emailAddress}}</td>
+                    <td>{{data.phoneNumber}}</td>
+                    <td>{{data.contactPerson}}</td>
+                    <td>{{data.client}}</td>
+                    <td>{{data.sites}}</td>
+                    <td>{{data.tenants}}</td>
+                    <td>{{data.areaSqFt}}</td>
+                    <td class="default-table">
+                        <span class="fa fa-edit" (click)="editFacilitators(data)"></span>
+                        <span class="fa fa-trash mr-3" (click)="deleteFacilitators(template, data)"></span>
+                    </td>
+
+                  </tr>
+                
+                </tbody>
+              </table>
+          </div>
+    </div>
+</div>
+
+<app-facilitators-view *ngIf="routeData.isViewPageShown" [routeData]="routeData" (emitBack)="back()"></app-facilitators-view>
+
+
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to Delete this record?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>
+

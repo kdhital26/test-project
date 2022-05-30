@@ -1,0 +1,55 @@
+.con-per-del {
+    flex-direction: column;
+}
+
+label {
+    color: #6c757d;
+}
+
+.avatar-wrapper{
+	position: relative;
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 1px 1px 15px -5px black;
+	transition: all .3s ease;
+	&:hover{
+		cursor: pointer;
+	}
+	
+	.profile-pic {
+        height: 100%;
+		width: 100%;
+		transition: all .3s ease;
+		&:after{
+			font-family: Poppins;
+			content: "\002B";
+			top: 0;
+             left: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			font-size: 140px;
+			background: #ecf0f1;
+			text-align: center;
+            color: #a39e9e;
+		}
+	}
+	.upload-button {
+		position: absolute;
+		top: 0; left: 0;
+		height: 100%;
+		width: 100%;
+		
+	}
+    
+}
+
+.btn.btn-outline-danger {
+    margin-right: 5px;
+}
+
+.bread-back {
+	cursor: pointer;
+}

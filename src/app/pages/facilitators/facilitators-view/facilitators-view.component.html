@@ -1,0 +1,120 @@
+<div class="container mt-3">
+    <h5>{{btnType}} Facilitators</h5>
+    <!-- bread crum -->
+    <p><span class="bread-back" (click)="backToListingPage()">Facilitators Master</span>/{{btnType}} Facilitators</p>
+    <p><small>Note: Click on Facilitators Master to return in listing page</small></p>
+
+</div>
+<div class="container mt-4 card">
+    <form class="row">
+        <div class="card-body row">
+
+            <div class="d-flex con-per-del">
+                <h5>Create Facilitators Profile</h5>
+                <label>Add Some Basic information related to this facilitators</label>
+                
+            </div>
+
+            <div class="mt-2 ml-2">
+                <div class="avatar-wrapper ">
+                    <img class="profile-pic" src="" />
+                    <div class="upload-button">
+                        <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                    </div>
+                    <input class="file-upload" type="file" accept="image/*"/>
+                </div>
+            </div>
+           
+            <div class="mt-2 row">
+
+                <div class="col-md-6 form-group">
+                    <label for="companyName" class="form-label">Company Name</label>
+                    <input placeholder="Company Name" name="companyName" [(ngModel)]="routeData.facilitatorsDetails.companyName" type="text" class="form-control">
+                  </div>
+          
+                  <div class="col-md-6 form-group">
+                      <label for="website" class="form-label">Website</label>
+                      <input placeholder="website" name="website" [(ngModel)]="routeData.facilitatorsDetails.website" type="text" class="form-control">
+                    </div>
+          
+                    <div class="col-md-6 form-group">
+                      <label for="e-mail" class="form-label">Company Email</label>
+                      <input placeholder="Email" name="email" [(ngModel)]="routeData.facilitatorsDetails.emailAddress" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+            
+                    <div class="col-md-6 form-group">
+                        <label for="phoneNumber" class="form-label">Mobile Number</label>
+                        <input placeholder="Mobile Number" name="phone" [(ngModel)]="routeData.facilitatorsDetails.phoneNumber" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+          
+                      <div class="  col-md-6 form-group">
+                          <label for="exampleInputEmail1" class="form-label">Select State</label>
+                          <select name="state" [(ngModel)]="routeData.facilitatorsDetails.state" class="form-select" aria-label="Default select example">
+                            <option [ngValue]="'select'">Select One</option>
+                            <option *ngFor="let state of states" [ngValue]="state">{{state}}</option>                        
+                          </select>
+                      </div>
+                
+                      <div class="col-md-4 form-group">
+                            <label for="exampleInputEmail1" class="form-label">Select City</label>
+                            <select name="city" [(ngModel)]="routeData.facilitatorsDetails.city" class="form-select" aria-label="Default select example">
+                                <option [ngValue]="'select'">Select One</option>
+                                <option *ngFor="let city of citites" [ngValue]="city">{{city}}</option>
+                                
+                              </select>
+                      </div>
+          
+                      <div class="col-md-2 form-group">
+                          <label for="postcode" class="form-label">Post Code</label>
+                          <input name="postcode" [(ngModel)]="routeData.facilitatorsDetails.postCode" placeholder="Post Code" type="text" class="form-control" id="postcode" >
+                    </div>
+          
+                      <div class="col-md-6 form-group">
+                              <label for="gsdnumber" class="form-label">GSD Number</label>
+                              <input name="gsdNumber" [(ngModel)]="routeData.facilitatorsDetails.gsdNumber" placeholder="GSD Number" type="email" class="form-control">
+                      </div>
+                    
+                      <div class="col-md-6 form-group">
+                                <label for="faxnumber" class="form-label">Company Fax Number</label>
+                                <input name="faxnumber" [(ngModel)]="routeData.facilitatorsDetails.faxnumber" placeholder="Fax Number" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+    
+                      <div class="d-flex con-per-del">
+                          <strong>Primary Contact Person Details</strong>
+                          <small>Add some basic information related primary contact person</small>
+                      </div>
+    
+                        <div class="col-md-6 form-group">
+                            <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                            <input name="fullName" [(ngModel)]="routeData.facilitatorsDetails.fullName" placeholder="Full Name" type="text" class="form-control" >
+                        </div>
+              
+                        <div class="col-md-6 form-group">
+                                <label for="exampleInputEmail1" class="form-label">Designation/Role</label>
+                                <input name="roles" [(ngModel)]="routeData.facilitatorsDetails.role" placeholder="Designation/Role" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+    
+                        <div class="col-md-6 form-group">
+                            <label for="number" class="form-label">Contact Number</label>
+                            <input name="contactnumber" [(ngModel)]="routeData.facilitatorsDetails.phoneNumber" placeholder="Contact Number" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+              
+                        <div class="col-md-6 form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input name="e-mail" [(ngModel)]="routeData.facilitatorsDetails.emailAddress" placeholder="Email Address" type="email" class="form-control" >
+                        </div>
+
+            </div>
+
+            <div class="mt-3 d-flex justify-content-start">
+                <button class="btn btn-primary mr-3" (click)="saveFacilitator()">{{btnType}} Facilitator</button>
+                <button class="btn btn-default" (click)="reset()"><i class="fa fa-undo" aria-hidden="true"></i> Reset</button>
+            </div>
+
+              
+        </div>
+        
+       
+      </form>
+
+</div>

@@ -1,0 +1,35 @@
+input {
+    border-radius: 50px;
+    width: 25%;
+}
+
+button{
+    background-color: #fff !important;
+    color: rgb(73, 73, 73);
+    border: 1px solid rgb(73, 73, 73) !important;
+
+}
+
+.btn-group>.btn:focus, .btn-group>.btn:hover {
+    background-color: none !important;
+    color: rgb(73, 73, 73);
+}
+
+.dropdown-menu {
+    min-width: 8rem;
+}
+
+.button-default {
+    background-color: #b4b9bb;
+    color: rgb(72, 62, 223);
+    border-radius: 5px;
+    width: 88px;
+    line-height: 36px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.m-r-5 {
+    margin-right: 5px;
+}
+

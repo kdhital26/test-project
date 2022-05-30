@@ -1,0 +1,16 @@
+<div class="card row">
+    <div class="form-group card-body d-flex justify-content-between">
+        <input (keyup)="filterFacilitators()" name="seach" [(ngModel)]="searchText" type="email" class="form-control" placeholder="Search...">
+
+        <div class="btn-group d-flex " dropdown>
+            <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle m-r-5"
+                    aria-controls="dropdown-basic">
+              Column <span class="caret"></span>
+            </button>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                role="menu" aria-labelledby="button-basic">
+               <li role="menuitem"><a class="dropdown-item" href="#">TODO</a></li> <!--need to add dropdown list here -->
+            </ul>
+            <a class="button-default" role="button"><span class="fa fa-download"></span>&nbsp;Export</a>
+    </div>
+</div>
